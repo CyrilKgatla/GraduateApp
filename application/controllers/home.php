@@ -22,12 +22,39 @@ class home extends CI_Controller {
         $data['account'] = $this->account_model->selectAccount($email, $password);
 
         if ($data['account'] != NULL) {
-            $data['IsSuccessful'] = TRUE;
-            $data['Nav'] = base_url('index.php/admin');
-        }else
-        {
+            switch ($data['account']['account_type']) {
+                case 'admin':
+                    session_start();
+                    $_SESSION['graduate_app_user'] = serialize($data['account']);
+                    $data['IsSuccessful'] = TRUE;
+                    $data['Nav'] = base_url('index.php/admin');
+                    break;
+                case 'graduate':
+                    session_start();
+                    $_SESSION['graduate_app_user'] = serialize($data['account']);
+                    $data['IsSuccessful'] = TRUE;
+                    $data['Nav'] = base_url('index.php/graduate');
+                    break;
+                case 'recruiter':
+                    session_start();
+                    $_SESSION['graduate_app_user'] = serialize($data['account']);
+                    $data['IsSuccessful'] = TRUE;
+                    $data['Nav'] = base_url('index.php/recruiter');
+                    break;
+                default :
+                    return;
+            }
+        } else {
             $data['Message'] = 'Account not found';
         }
+        header('Content-Type: application/json');
+        echo json_encode($data);
+    }
+
+    public function logout() {
+        unset($_SESSION['graduate_app_user']);
+        $data['IsSuccessful'] = TRUE;
+        $data['Nav'] = base_url('index.php');
         header('Content-Type: application/json');
         echo json_encode($data);
     }

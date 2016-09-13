@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title><?php echo (isset($title)) ? $title : "Main"; ?></title>
+        <title>Graduate App</title>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/bootstrap.css'); ?>" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>

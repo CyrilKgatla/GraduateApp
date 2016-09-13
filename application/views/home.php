@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <input type="password" ng-model="account.password" class="form-control" placeholder="Password" required>
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox" value="remember-me"> Remember me
+                        <input type="checkbox" ng-model="account.remember" value="remember-me"> Remember me
                     </label>
                 </div>
                 <button class="btn btn-lg btn-default btn-block" type="submit">Sign in</button>
