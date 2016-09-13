@@ -24,7 +24,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li id="home">
-                            <a  href="<?php echo base_url('/index.php/admin'); ?>">Admin</a>						
+                            <a  href="<?php echo base_url('/index.php/graduate'); ?>">Graduate</a>						
                         </li>
                     </ul>
 
@@ -37,7 +37,7 @@
             </div>
         </nav>
         <div class="container">
-            <h1>Welcome to the Admin page</h1>
+            <h1>Welcome to the Graduate page</h1>
         </div>
     </body>
 </html>
